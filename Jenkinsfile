@@ -11,7 +11,17 @@ pipeline {
             }
         }
 
-    stage ('package Stage') {
+        stage ('Testing Stage') {
+
+            steps {
+                withMaven(maven : 'maven') {
+                    bat 'mvn test'
+                }
+            }
+        }
+
+
+        stage ('package Stage') {
             steps {
                 withMaven(maven : 'maven') {
                     bat 'mvn package'
