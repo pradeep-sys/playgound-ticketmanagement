@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.altimetrik.inventoryManagement.controllerInterface.BatteryApi;
 import com.altimetrik.inventoryManagement.model.Battery;
@@ -20,7 +21,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.swagger.annotations.ApiParam;
 
-@Controller
+@RestController
 public class BatteryApiController implements BatteryApi {
 
     private static final Logger log = LoggerFactory.getLogger(BatteryApiController.class);

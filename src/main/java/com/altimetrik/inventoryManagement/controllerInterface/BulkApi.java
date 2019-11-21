@@ -22,6 +22,7 @@ import io.swagger.annotations.Authorization;
 import io.swagger.annotations.AuthorizationScope;
 
 @Api(value = "bulk", description = "the bulk API")
+@RequestMapping("/inventoryManagement")
 public interface BulkApi {
 
     @ApiOperation(value = "insert bulk item ", nickname = "createBulkItem", notes = "insert bulk item in the system", response = Battery.class, responseContainer = "List", authorizations = {

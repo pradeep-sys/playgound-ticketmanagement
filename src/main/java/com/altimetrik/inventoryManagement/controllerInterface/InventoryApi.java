@@ -23,6 +23,7 @@ import io.swagger.annotations.Authorization;
 import io.swagger.annotations.AuthorizationScope;
 
 @Api(value = "inventory", description = "the inventory API")
+@RequestMapping("/inventoryManagement")
 public interface InventoryApi {
 
     @ApiOperation(value = "Update an existing inventory", nickname = "updateInventory", notes = "this is to update inventory in the system", response = Inventory.class, authorizations = {

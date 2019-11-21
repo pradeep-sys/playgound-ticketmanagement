@@ -20,6 +20,7 @@ import io.swagger.annotations.Authorization;
 import io.swagger.annotations.AuthorizationScope;
 
 @Api(value = "battery", description = "the battery API")
+@RequestMapping("/inventoryManagement")
 public interface BatteryApi {
 
     @ApiOperation(value = "Add new battery", nickname = "addbattery", notes = "this is to add new battery to the system", response = Battery.class, authorizations = {
