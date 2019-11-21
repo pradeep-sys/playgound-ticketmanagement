@@ -10,15 +10,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.altimetrik.inventoryManagement.controllerInterface.InventoryApi;
 import com.altimetrik.inventoryManagement.model.Inventory;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.swagger.annotations.ApiParam;
-@Controller
+@RestController
 public class InventoryApiController implements InventoryApi {
 
     private static final Logger log = LoggerFactory.getLogger(InventoryApiController.class);
