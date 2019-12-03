@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+	img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width:20%;
+	}
+
+.wrapper {
+    text-align: center;
+}
+
+.button {
+
+    position: absolute;
+    top: 50%;
+}
+
+	</style>
+	<body style="background-color:rgb(241, 199, 135)">
+
+<h2 style="text-align:center;">Altimetrik India Pvt. Ltd.</h2>
+<img src="alti logo.png" alt="Altimetrik logo">
+
+
+ 
+  <br>
+	<h1 style="text-align:center;">Ticket Migration Mediator system</h1>
+	<br>
+	<div class="wrapper">
+		<button id="migrateBtn" type="button" class="btn btn-primary btn-lg" >Migrate</button>
+</div>
+<h3>Response</h3>
+<div id='result'></div>
+<script>
+
+  document.getElementById('migrateBtn').addEventListener('click', migrate);
+
+  var ticketRequest =[
+	    {
+	      "title":"Ticket116",
+	      "id":"defectId121",
+	      "version":"15",
+	      "description":"updatedjhghjgh"
+
+
+	    }
+		,
+		{
+	      "title":"Ticket117",
+	      "id":"defectId23",
+	      "version":"35",
+	      "description":"updadahsjdshjh"
+
+
+	    }
+		]
+	  ;
+
+
+
+
+function migrate(){
+
+var xmlhttp = new XMLHttpRequest();    
+xmlhttp.open("POST", "http://localhost:8082/tickets/migrate");
+xmlhttp.setRequestHeader("Content-Type", "application/json"); 
+ 
+xmlhttp.send(JSON.stringify( ticketRequest));
+
+xmlhttp.onreadystatechange = function() {
+	  if (this.readyState == 4 && this.status == 200) {
+	     console.log(xmlhttp.responseText);
+	     document.getElementById("result").innerHTML = xmlhttp.responseText;
+	     
+	  }
+	};
+}
+  
+   
+   
+
+ 
+  </script>
+
+</body>
+</html>

@@ -1,10 +1,10 @@
-package com.altimetrik.inventoryManagement;
+package com.altimetrik.playground.ticketManagement;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class InventoryManagementApplicationTests {
+class TicketManagementApplicationTests {
 
 	@Test
 	void contextLoads() {

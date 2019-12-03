@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+ 
+<body>
+
+<h1>Altimetrik </h1>
+
+<div >
+ 
+  <br><br> 
+  <h2>Ticket Migrate</h2>
+  
+  <div id='result'></div>
+  <button id='migrateBtn' >Migrate</button>
+
+</div> 
+<script>
+
+  document.getElementById('migrateBtn').addEventListener('click', migrate);
+
+  var ticketRequest =[
+	    
+		{
+	      "title":"TC12",
+	      "id":"defectId011",
+	      "version":"5",
+	      "description":"updadahsjh"
+
+
+	    }
+		,
+		{
+		      "title":"TC12",
+		      "id":"defectId012",
+		      "version":"6",
+		      "description":"updadahsjh"
+
+
+		    }
+		]
+	  ;
+
+
+
+
+function migrate(){
+
+var xmlhttp = new XMLHttpRequest();    
+xmlhttp.open("POST", "http://localhost:8082/tickets/migrate");
+xmlhttp.setRequestHeader("Content-Type", "application/json"); 
+ 
+xmlhttp.send(JSON.stringify( ticketRequest));
+
+xmlhttp.onreadystatechange = function() {
+	  if (this.readyState == 4 && this.status == 200) {
+	     console.log(xmlhttp.responseText);
+	     document.getElementById("result").innerHTML = xmlhttp.responseText;
+	     
+	  }
+	};
+}
+   
+   
+
+ 
+  </script>
+
+</body>
+</html>
