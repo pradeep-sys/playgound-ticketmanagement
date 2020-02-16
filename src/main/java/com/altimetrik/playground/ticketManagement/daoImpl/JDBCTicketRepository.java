@@ -22,6 +22,7 @@ public class JDBCTicketRepository implements TicketRepository {
 		// TODO Auto-generated method stub
 		
 		StringBuffer query =  new StringBuffer();
+		String s="dsjnjdnjd";
 		query.append("INSERT INTO tb_ticket(defect_id,version_id,ticket_id,created_date) values(?,?,?,CURRENT_TIMESTAMP())");
 		int result = jdbcTemplate.update(query.toString(),ticketRequest.getId(),ticketRequest.getVersion(),ticketResponse.getId());
 	
